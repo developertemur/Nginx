@@ -52,13 +52,13 @@ if(name==""){
     Environment.Exit(System.Environment.ExitCode);
 }
 var path=$"/www/{name}/";
-if(Directory.Exists(path+"html")){
+if(!Directory.Exists(path+"html")){
     Directory.CreateDirectory(path+"html"); Chmod(path+"html","0777");
 }
-if(Directory.Exists(path+"log")){
+if(!Directory.Exists(path+"log")){
     Directory.CreateDirectory(path+"log"); Chmod(path+"log","0777");
 }
-if(Directory.Exists(path+"tmp")){
+if(!Directory.Exists(path+"tmp")){
     Directory.CreateDirectory(path+"tmp"); Chmod(path+"tmp","0777");
 }
 Chown(path,Environment.UserName,"www-data");
